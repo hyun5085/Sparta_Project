@@ -8,9 +8,7 @@ public enum OperatorType {
     SUB('-', (lv4value1, lv4value2) -> lv4value1 - lv4value2),
     MUL('*', (lv4value1, lv4value2) -> lv4value1 * lv4value2),
     DIV('/', (lv4value1, lv4value2) -> {
-
-        if (lv4value2 == 0) {
-            System.out.println("0으로 나눌 수 없습니다.");
+        if (lv4value2 == 0) {System.out.println("0으로 나눌 수 없습니다.");
             return 0;  //
         }
         return lv4value1 / lv4value2;

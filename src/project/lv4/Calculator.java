@@ -13,7 +13,7 @@ public class Calculator {
     private int lv4result;
 
 
-    //
+
     public int Arithmetic  (int lv4num1, int lv4num2, char lv4Bsymbol) {
         this.lv4symbol = lv4Bsymbol;
         this.lv4value1 = lv4num1;

@@ -82,8 +82,8 @@ public class App {
             }
 
             int lv2result1 = calculator.Arithmetic (lv2value1, lv2value2, lv2symbol);
-            System.out.println("lv2result = " + lv2result1);
-            System.out.println(calculator.arrayList);
+            System.out.println("결과 값 : " + lv2result1);
+            System.out.println("저장된 결과 값: " + calculator.arrayList);
 
             while(true) {
                 System.out.println("오래된 연산 결과를 삭제하시겠습니까?(yes/no)");
@@ -92,7 +92,7 @@ public class App {
                 if(lv2delete.equalsIgnoreCase("yes")) {
                     if (!calculator.arrayList.isEmpty()) {
                         calculator.arrayList.remove(0);
-                        System.out.println(calculator.arrayList);
+                        System.out.println("저장된 결과 값: " + calculator.arrayList);
                         break;
                     } else {
                         System.out.println("삭제할 연산 결과가 없습니다.");

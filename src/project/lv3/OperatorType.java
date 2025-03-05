@@ -32,20 +32,21 @@ public enum OperatorType {
 
     private final char lv3symbol;
 
-    // ✅ 생성자
+    // 생성자
     OperatorType(char lv3symbol) {
         this.lv3symbol = lv3symbol;
     }
 
-    // ✅ `abstract` 메서드 → 모든 `enum`에서 반드시 구현해야 함!
+    //
     public abstract int lv3result(int lv3value1, int lv3value2);
 
     public char getSymbol() {
         return lv3symbol;
     }
 
-    // ✅ `getSymbol()` 추가 (입력된 연산 기호를 기반으로 `OperatorType`을 찾음)
+    // 입력된 연산 기호 App -> Calculator -> getSymbol
     public static OperatorType getSymbol(char lv3Csymbol) {
+        // OperatorType [ ADD, SUB, MUL, DIV ] 을 찾음
         for (OperatorType operatorType : OperatorType.values()) {
             if (operatorType.lv3symbol == lv3Csymbol) {
                 return operatorType;
