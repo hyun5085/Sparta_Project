@@ -24,7 +24,8 @@ public class Calculator {
 
         OperatorType operator = OperatorType.getSymbol(lv4Bsymbol);
 
-        // ✅ OperatorType을 통해 연산 수행
+        // OperatorType을 통해 연산 수행
+        // 연산이 수행되고 나서 그 결과 값을 lv4result 로 표현
         lv4result = operator.lv4result(lv4num1, lv4num2);
 
         arrayList.add(lv4result);  // 결과 저장
