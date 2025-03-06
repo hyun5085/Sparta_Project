@@ -18,7 +18,7 @@ public class App {
             // Scanner를 사용하여 양의 정수 2개(0 포함)를 전달 받을 수 있습니다.
             // 양의 정수는 각각 하나씩 전달 받습니다.
             // 양의 정수는 적합한 타입으로 선언한 변수에 저장합니다.
-            int lv4value1;
+            double lv4value1;
 
             // 수정하기 (처음부터 무한 반복하는 것이 아니라, 위 스텝별로 진행하며 수정)
             while(true) {
@@ -30,14 +30,14 @@ public class App {
                     return;
                 }
                 //*** 사용자가 정수를 입력했는지 확인***
-                if (!lv4scanner.hasNextInt()) {
+                if (!lv4scanner.hasNextDouble()) {
                     System.out.println("유효한 정수를 입력해주세요.");
                     //*** 정수가 입력되지 않았으면 그 안에 빈 데이터를 입력하면서 초기화 ***
                     lv4scanner.next();
                     //
                     continue;
                 }
-                lv4value1 = lv4scanner.nextInt();
+                lv4value1 = lv4scanner.nextDouble();
 
                 if (lv4value1 < 0) {
                     System.out.println("양의 정수(0 포함)를 입력해주세요.");
@@ -48,16 +48,16 @@ public class App {
 
             // 양의 정수는 각각 하나씩 전달 받습니다.
             // 양의 정수는 적합한 타입으로 선언한 변수에 저장합니다.
-            int lv4value2;
+            double lv4value2;
             // 수정하기 (처음부터 무한 반복하는 것이 아니라, 위 스텝별로 진행하며 수정)
             while(true) {
                 System.out.println("두 번째 정수를 입력하세요:");
-                if (!lv4scanner.hasNextInt()) {
+                if (!lv4scanner.hasNextDouble()) {
                     System.out.println("유효한 정수를 입력해주세요.");
                     lv4scanner.next();
                     continue;
                 }
-                lv4value2 = lv4scanner.nextInt();
+                lv4value2 = lv4scanner.nextDouble();
 
                 if (lv4value2 < 0) {
                     System.out.println("양의 정수(0 포함)를 입력해주세요.");
@@ -81,7 +81,7 @@ public class App {
                 }
             }
 
-            int lv4result1 = calculator.Arithmetic (lv4value1, lv4value2, lv4Asymbol);
+            Number lv4result1 = calculator.Arithmetic (lv4value1, lv4value2, lv4Asymbol);
             System.out.println("lv4result = " + lv4result1);
             System.out.println(calculator.arrayList);
 

@@ -4,30 +4,38 @@ import java.util.function.BiFunction;
 // Enum(Enumeration)은 서로 관련 있는 상수(Constant) 값들의 집합을 정의할 때 사용하는 특별한 데이터 타입
 public enum OperatorType {
     // 람다식 구현
-    ADD('+', (lv4value1, lv4value2) -> lv4value1 + lv4value2),
-    SUB('-', (lv4value1, lv4value2) -> lv4value1 - lv4value2),
-    MUL('*', (lv4value1, lv4value2) -> lv4value1 * lv4value2),
+    // a. 가 입력되는 값을   Double로 반환
+    // /**
+    //     * Returns the value of the specified number as a {@code double}.
+    //     *
+    //     * @return  the numeric value represented by this object after conversion
+    //     *          to type {@code double}.
+    //     */
+    //    public abstract double doubleValue();
+    ADD('+', (lv4value1, lv4value2) -> lv4value1.doubleValue() + lv4value2.doubleValue()),
+    SUB('-', (lv4value1, lv4value2) -> lv4value1.doubleValue() - lv4value2.doubleValue()),
+    MUL('*', (lv4value1, lv4value2) -> lv4value1.doubleValue() * lv4value2.doubleValue()),
     DIV('/', (lv4value1, lv4value2) -> {
-        if (lv4value2 == 0) {System.out.println("0으로 나눌 수 없습니다.");
+        if (lv4value2.doubleValue() == 0) {System.out.println("0으로 나눌 수 없습니다.");
             return 0;  //
         }
-        return lv4value1 / lv4value2;
+        return lv4value1.doubleValue() / lv4value2.doubleValue();
     });
 
     // enum 변수 선언
-    BiFunction<Integer, Integer, Integer> function;
+    BiFunction<Number, Number, Number> function;
     private char lv4symbol;
 
 
     // OperatorType은 Char형 lv4symbol, BiFunction Interger형 function
-    OperatorType(char lv4symbol, BiFunction<Integer, Integer, Integer> function){
+    OperatorType(char lv4symbol, BiFunction<Number, Number, Number> function){
         this.function = function;
         this.lv4symbol = lv4symbol;
 
     }
 
     // OperatorType은 결과값
-    public int lv4result(int lv4value1, int lv4value2) {
+    public <T extends Number> Number lv4result(T lv4value1, T lv4value2) {
         return function.apply(lv4value1, lv4value2);
     }
 
