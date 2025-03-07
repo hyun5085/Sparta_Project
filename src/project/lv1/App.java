@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         // Consol 창에 "Hello, Calculator" 출력 확인
-        System.out.println("Hello, Let's start the Calculator");
+        System.out.println("Hello, Let's start the Calculator!");
         // Scanner를 사용하기 위한 초기 설정
         Scanner lv1scanner = new Scanner(System.in);
 
